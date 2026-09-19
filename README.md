@@ -31,7 +31,8 @@ Return `None` to ignore an event, or a reply in this format:
 | `v` | Reply format version, currently `1`. |
 | `consumer` | Name shown in live-ocr's log. |
 | `in_reply_to` | The snapshot's `ts`. |
-| `message` | One line for the user. The only field live-ocr requires. |
+| `message` | One line for the user, shown in live-ocr's log and as the headline of its State panel. The only field live-ocr requires. |
+| `state` | What is true now, as label/value pairs: `[["Position", "CO"], ["Equity", "62%"]]`. live-ocr shows them in its State panel, replacing the previous set, highlighting values that changed and greying the lot once the reply is a few seconds old. A log says what happened; this says what is. Optional, and live-ocr never interprets the pairs. |
 | `decision` | Machine-readable result, at least `action`. Future live-ocr actions will act on this. |
 | `reason` | Why this decision was made. |
 | `algorithm` | `name`, `version` and any parameters that produced the decision. |

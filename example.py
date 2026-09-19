@@ -15,6 +15,7 @@ def handle(event):
         "consumer": "example",
         "in_reply_to": event.get("ts"),
         "message": f"{len(filled)} of {len(regions)} regions have text",
+        "state": [["Regions", str(len(regions))], ["With text", str(len(filled))]],
         "decision": {"action": "none"},
         "reason": "The example consumer only counts regions with text.",
         "algorithm": {"name": "count-non-empty", "version": 1},
